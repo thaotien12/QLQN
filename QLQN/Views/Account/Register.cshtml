@@ -1,0 +1,31 @@
+﻿@model QLQN.Models.RegisterViewModel
+
+<h2>Đăng ký tài khoản</h2>
+
+<form method="post">
+    <div>
+        <label>Tên đăng nhập:</label>
+        <input asp-for="Username" />
+        <span asp-validation-for="Username" style="color:red"></span>
+    </div>
+
+    <div>
+        <label>Mật khẩu:</label>
+        <input asp-for="Password" />
+        <span asp-validation-for="Password" style="color:red"></span>
+    </div>
+
+    <div>
+        <label>Nhập lại mật khẩu:</label>
+        <input asp-for="ConfirmPassword" />
+        <span asp-validation-for="ConfirmPassword" style="color:red"></span>
+    </div>
+
+    <button type="submit">Đăng ký</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
